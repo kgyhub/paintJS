@@ -1,65 +1,78 @@
 @import "reset.css";
+/* 전체 화면 */
 body {
-  background-color: #f6f9fc;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0px;
+    background-color: beige;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px; /* 여백 */
 }
 
-.canvas {
-  width: 700px;
-  height: 700px;
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+/* canvas 사이즈 */
+.canvas{ 
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    border-radius: 15px; /* 모서리 곡선 */
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); /* 테두리 그림자 */
 }
 
-.controls {
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#txtTest{
+    position: absolute;
+    top:50px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 700px;
+    /* pointer-events: none; */
+    /* background-color: white; */
+    /* border-radius: 15px; 모서리 곡선 */
+    /* box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); 테두리 그림자 */
+}
+
+.controls { /* 컬러박스와 캔버스 사이 간격 */
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column; /* 버튼 위치 정의 */
+    align-items: center;
 }
 
 .controls .controls__btns {
-  margin-bottom: 30px;
+    margin-bottom: 30px; /* 컬러박스와 버튼 사이 간격 설정, 컬러박스가 더 내려감 */
 }
 
 .controls__btns button {
-  all: unset;
-  cursor: pointer;
-  background-color: white;
-  padding: 5px 0px;
-  width: 80px;
-  text-align: center;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.7);
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 12px;
+    all: unset; /* 버튼 박스 삭제 */
+    cursor: pointer; /* 버튼 포인터 정의 */
+    background-color: #ffffff; /* 버튼 배경 */
+    padding: 5px 0px; /* 버튼 배경 사이즈 */
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
 }
-
 .controls__btns button:active {
-  transform: scale(0.98);
+    transform: scale(0.98);
+  }
+
+.controls .controls__colors { /* 컬러박스 가로 변경 */
+    display: flex;
 }
 
-.controls .controls__colors {
-  display: flex;
-}
-
-.controls__colors .controls__color {
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+.controls__colors .controls__color { /* 컬러박스 생성 */
+    width: 50px;
+    height: 50px;
+    border-radius: 25px; /* 컬러박스 모서리 곡선, width의 절반값 */
+    cursor: pointer; /* 마우스 포인터 */
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .controls .controls__range {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
