@@ -206,8 +206,8 @@ function getImageFiles(e) {
   reader.onload = (e) => {
     img.src = e.target.result;
     img.onload = () => {
-      canvas.width = img.width;
-      canvas.height = img.height;
+      //canvas.width = img.width;
+      //canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
     };
   };
